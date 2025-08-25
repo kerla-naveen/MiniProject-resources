@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+    header .profile {
+      font-size: 14px;
+    }
+    .container {
+      display: flex;
+    }
+    nav {
+      width: 230px;
+      background: #1a1a2e;
+      min-height: 100vh;
+      color: #fff;
+      padding-top: 20px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      padding: 15px;
+      cursor: pointer;
+      border-bottom: 1px solid #333;
+    }
+    nav ul li:hover {
+      background: #162447;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card h2 {
+      margin-top: 0;
+    }
+    input, textarea, select, button {
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 14px;
+    }
+    button {
+      background: #003366;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      width: auto;
+      padding: 8px 15px;
+    }
+    button:hover {
+      background: #0055aa;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    table th {
+      background: #f2f2f2;
+    }
+    footer {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Teacher Dashboard</h1>
+    <div class="profile">Welcome, Prof. Smith | Subject: DBMS</div>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <nav>
+      <ul>
+        <li>📂 Manage Files/Videos</li>
+        <li>🧪 Create Tests</li>
+        <li>📝 Assignments</li>
+        <li>📅 Attendance</li>
+        <li>📊 Polls</li>
+      </ul>
+    </nav>
+
+    <!-- Main -->
+    <main>
+      <!-- File Upload Section -->
+      <div class="card">
+        <h2>📂 Upload / Manage Files & Videos</h2>
+        <input type="file">
+        <button>Upload File/Video</button>
+        <h3>Uploaded Files</h3>
+        <table>
+          <tr><th>Name</th><th>Type</th><th>Action</th></tr>
+          <tr><td>Lecture1.pdf</td><td>PDF</td><td><button>Delete</button></td></tr>
+          <tr><td>Class1.mp4</td><td>Video</td><td><button>Delete</button></td></tr>
+        </table>
+      </div>
+
+      <!-- Create Test Section -->
+      <div class="card">
+        <h2>🧪 Create Test</h2>
+        <input type="text" placeholder="Test Title">
+        <textarea placeholder="Enter Questions here..."></textarea>
+        <button>Create Test</button>
+      </div>
+
+      <!-- Assignment Section -->
+      <div class="card">
+        <h2>📝 Create Assignment</h2>
+        <input type="text" placeholder="Assignment Title">
+        <textarea placeholder="Assignment Instructions..."></textarea>
+        <label>Deadline:</label>
+        <input type="date">
+        <button>Create Assignment</button>
+      </div>
+
+      <!-- Attendance Section -->
+      <div class="card">
+        <h2>📅 Give Attendance</h2>
+        <table>
+          <tr><th>Roll No</th><th>Name</th><th>Status</th></tr>
+          <tr><td>101</td><td>Alice</td>
+              <td><select><option>Present</option><option>Absent</option></select></td></tr>
+          <tr><td>102</td><td>Bob</td>
+              <td><select><option>Present</option><option>Absent</option></select></td></tr>
+        </table>
+        <button>Submit Attendance</button>
+      </div>
+
+      <!-- Poll Section -->
+      <div class="card">
+        <h2>📊 Create Poll</h2>
+        <input type="text" placeholder="Poll Question">
+        <input type="text" placeholder="Option 1">
+        <input type="text" placeholder="Option 2">
+        <input type="text" placeholder="Option 3">
+        <button>Create Poll</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 My College | Teacher Dashboard
+  </footer>
+</body>
+</html>
+
+
+
+
+----------------------------
+import React from "react";
+import { Bell, CalendarDays, ClipboardList, GraduationCap, BookOpen, FileText, Video, Link as LinkIcon, NotebookPen, BarChart2, Clock, UserCheck } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator";
+
+// --- Mock Data ---
+const students = [
+  { id: 1, name: "Alice", attendance: 92, grade: 88 },
+  { id: 2, name: "Bob", attendance: 85, grade: 79 },
+  { id: 3, name: "Charlie", attendance: 78, grade: 82 },
+];
+
+const assignments = [
+  { id: 101, title: "Heap Applications", due: "Aug 27", subject: "DSA" },
+  { id: 102, title: "SQL Triggers", due: "Aug 30", subject: "DBMS" },
+];
+
+const quizzes = [
+  { id: 201, title: "Graphs Quiz", time: "15 min", subject: "DSA" },
+  { id: 202, title: "SQL Basics", time: "20 min", subject: "DBMS" },
+];
+
+const previousYearQuestions = [
+  { id: 301, title: "DSA - PYQ 2022", subject: "DSA" },
+  { id: 302, title: "DBMS - PYQ 2021", subject: "DBMS" },
+  { id: 303, title: "OS - PYQ 2020", subject: "OS" },
+];
+
+export default function TeacherDashboard() {
+  return (
+    <div className="min-h-screen w-full bg-gradient-to-b from-green-50 to-green-100 text-slate-900">
+      {/* Topbar */}
+      <header className="sticky top-0 z-20 border-b bg-white/90 backdrop-blur-lg">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+          <div className="flex items-center gap-3">
+            <GraduationCap className="h-6 w-6 text-green-700" />
+            <span className="text-lg font-bold text-green-800">Digital Classroom</span>
+            <Separator orientation="vertical" className="mx-2 h-6" />
+            <span className="hidden text-sm text-muted-foreground sm:inline">
+              Teacher · E3–S1 · 3rd Year CSE
+            </span>
+          </div>
+          <div className="flex items-center gap-3">
+            <Button variant="ghost" size="icon" className="rounded-full">
+              <Bell className="h-5 w-5 text-green-600" />
+            </Button>
+            <Avatar className="h-10 w-10">
+              <AvatarImage alt="Teacher" />
+              <AvatarFallback>TM</AvatarFallback>
+            </Avatar>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 py-6 lg:grid-cols-12">
+        {/* Left Column - Student Overview */}
+        <section className="lg:col-span-3 space-y-6">
+          <Card className="rounded-3xl shadow-lg">
+            <CardContent>
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <UserCheck className="h-5 w-5 text-green-700" /> Student Overview
+              </h3>
+              <ScrollArea className="h-64">
+                {students.map(s => (
+                  <div key={s.id} className="flex items-center justify-between mb-2 p-2 bg-green-50 rounded-lg border border-green-100">
+                    <span className="font-medium text-green-800">{s.name}</span>
+                    <div className="flex gap-2">
+                      <Badge variant="secondary">Attendance: {s.attendance}%</Badge>
+                      <Badge variant="default">Grade: {s.grade}%</Badge>
+                    </div>
+                  </div>
+                ))}
+              </ScrollArea>
+            </CardContent>
+          </Card>
+
+          <Card className="rounded-3xl shadow-lg">
+            <CardContent>
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <FileText className="h-5 w-5 text-green-700" /> Assignments
+              </h3>
+              <ScrollArea className="h-64">
+                {assignments.map(a => (
+                  <div key={a.id} className="flex items-center justify-between mb-2 p-2 bg-green-50 rounded-lg border border-green-100">
+                    <span>{a.title} ({a.subject})</span>
+                    <Badge variant="secondary">Due: {a.due}</Badge>
+                  </div>
+                ))}
+              </ScrollArea>
+            </CardContent>
+          </Card>
+
+          <Card className="rounded-3xl shadow-lg">
+            <CardContent>
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <NotebookPen className="h-5 w-5 text-green-700" /> Quizzes
+              </h3>
+              <ScrollArea className="h-64">
+                {quizzes.map(q => (
+                  <div key={q.id} className="flex items-center justify-between mb-2 p-2 bg-green-50 rounded-lg border border-green-100">
+                    <span>{q.title} ({q.subject})</span>
+                    <Badge variant="default">Time: {q.time}</Badge>
+                  </div>
+                ))}
+              </ScrollArea>
+            </CardContent>
+          </Card>
+
+          <Card className="rounded-3xl shadow-lg">
+            <CardContent>
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <BookOpen className="h-5 w-5 text-green-700" /> Previous Year Questions
+              </h3>
+              <ScrollArea className="h-64">
+                {previousYearQuestions.map(pyq => (
+                  <div key={pyq.id} className="flex items-center justify-between mb-2 p-2 bg-green-50 rounded-lg border border-green-100">
+                    <span>{pyq.title} ({pyq.subject})</span>
+                    <Button className="bg-green-500 text-white">View</Button>
+                  </div>
+                ))}
+              </ScrollArea>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Center Column - Actions */}
+        <section className="lg:col-span-6 space-y-6">
+          <Card className="rounded-3xl shadow-lg">
+            <CardContent>
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <ClipboardList className="h-5 w-5 text-green-700" /> Create Assignment
+              </h3>
+              <Input placeholder="Assignment Title" className="mb-3" />
+              <Button className="w-full bg-green-600">Create Assignment</Button>
+            </CardContent>
+          </Card>
+
+          <Card className="rounded-3xl shadow-lg">
+            <CardContent>
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <NotebookPen className="h-5 w-5 text-green-700" /> Create Quiz
+              </h3>
+              <Input placeholder="Quiz Title" className="mb-3" />
+              <Button className="w-full bg-green-600">Create Quiz</Button>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Right Column - Resources */}
+        <section className="lg:col-span-3 space-y-6">
+          <Card className="rounded-3xl shadow-lg">
+            <CardContent>
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <BookOpen className="h-5 w-5 text-green-700" /> Subject Resources
+              </h3>
+              <div className="flex flex-col gap-3">
+                <Button className="bg-green-500">Upload PDF</Button>
+                <Button className="bg-green-500">Upload Video</Button>
+                <Button className="bg-green-500">Upload Link</Button>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+      </main>
+    </div>
+  );
+}
+

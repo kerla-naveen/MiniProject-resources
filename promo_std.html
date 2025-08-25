@@ -1,0 +1,631 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #333;
+    }
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+    header .profile {
+      font-size: 14px;
+    }
+    .container {
+      display: flex;
+    }
+    nav {
+      width: 220px;
+      background: #1a1a2e;
+      min-height: 100vh;
+      color: #fff;
+      padding-top: 20px;
+      position: sticky;
+      top: 0;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      padding: 15px;
+      cursor: pointer;
+      border-bottom: 1px solid #333;
+    }
+    nav ul li:hover {
+      background: #162447;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .progress {
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 10px 0;
+      height: 20px;
+    }
+    .progress-bar {
+      height: 20px;
+      background: #28a745;
+      width: 70%; /* Example */
+      text-align: center;
+      color: white;
+      font-size: 12px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    table th {
+      background: #f2f2f2;
+    }
+    footer {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Student Dashboard</h1>
+    <div class="profile">Name: John Doe | Roll No: 12345</div>
+  </header>
+
+  <!-- Layout -->
+  <div class="container">
+    <!-- Sidebar -->
+    <nav>
+      <ul>
+        <li>📊 Dashboard</li>
+        <li>📅 Time Table</li>
+        <li>📝 Curriculum</li>
+        <li>📢 Notice Board</li>
+        <li>📚 Subjects & Resources</li>
+        <li>📂 Assignments</li>
+        <li>🧪 Tests</li>
+        <li>📌 Important Dates</li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Dashboard -->
+      <div class="card">
+        <h2>Attendance Percentage</h2>
+        <div class="progress">
+          <div class="progress-bar" style="width: 85%;">85%</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Grade Percentage</h2>
+        <div class="progress">
+          <div class="progress-bar" style="width: 78%; background: #007bff;">78%</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Notice Board</h2>
+        <ul>
+          <li>Mid Exam on 5th Sept</li>
+          <li>Holiday on 15th Aug</li>
+          <li>Assignment 2 Deadline: 20th Sept</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Time Table</h2>
+        <table>
+          <tr>
+            <th>Day</th>
+            <th>9-10 AM</th>
+            <th>10-11 AM</th>
+            <th>11-12 PM</th>
+          </tr>
+          <tr>
+            <td>Mon</td>
+            <td>Math</td>
+            <td>DBMS</td>
+            <td>OS</td>
+          </tr>
+          <tr>
+            <td>Tue</td>
+            <td>DSA</td>
+            <td>OS</td>
+            <td>DBMS</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>Assignments</h2>
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Subject</th>
+            <th>Due Date</th>
+            <th>Status</th>
+          </tr>
+          <tr>
+            <td>Assignment 1</td>
+            <td>DBMS</td>
+            <td>20 Sept</td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <td>Assignment 2</td>
+            <td>OS</td>
+            <td>25 Sept</td>
+            <td>Submitted</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>Tests</h2>
+        <ul>
+          <li>DBMS Quiz - Available <button>Start Test</button></li>
+          <li>OS Quiz - Coming Soon</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 My College | Contact: info@college.edu
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+-->
+
+-------------------							
+import React from "react";
+import { Bell, CalendarDays, ClipboardList, GraduationCap, BookOpen, FileText, Video, Link as LinkIcon, NotebookPen, BarChart2, Clock } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Input } from "@/components/ui/input";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Progress } from "@/components/ui/progress";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator";
+import { ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, LineChart, Line } from "recharts";
+
+// --- Mock Data ---
+const attendance = 84; // %
+const gradeTrend = [
+  { name: "Unit-1", grade: 72 },
+  { name: "Unit-2", grade: 78 },
+  { name: "Mid-1", grade: 80 },
+  { name: "Unit-3", grade: 82 },
+  { name: "Mid-2", grade: 86 },
+  { name: "Sem", grade: 0 },
+];
+
+const subjectBreakdown = [
+  { name: "DSA", value: 85 },
+  { name: "DBMS", value: 81 },
+  { name: "OS", value: 76 },
+  { name: "DAA", value: 88 },
+  { name: "Maths", value: 79 },
+];
+
+const COLORS = ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6"]; // Tailwind palette
+
+const notices = [
+  { id: 1, title: "Seminar on Cloud Security", when: "Aug 25, 10:00 AM", tag: "Event" },
+  { id: 2, title: "Mid-2 Timings Updated", when: "Aug 26", tag: "Exam" },
+  { id: 3, title: "Library Cards Distribution", when: "Aug 28", tag: "Info" },
+];
+
+const timetable = [
+  { day: "Mon", slots: ["DSA", "DBMS", "Break", "OS", "DAA", "Maths"] },
+  { day: "Tue", slots: ["DBMS", "DAA", "Break", "OS Lab", "OS Lab", "Counsel"] },
+  { day: "Wed", slots: ["Maths", "DSA", "Break", "DBMS", "Sports", "Library"] },
+  { day: "Thu", slots: ["OS", "DSA Lab", "DSA Lab", "Break", "DAA", "Maths"] },
+  { day: "Fri", slots: ["DAA", "DBMS", "Break", "Elective", "Seminar", "Club"] },
+];
+
+const importantDates = [
+  { label: "Mid-2 Starts", date: "Aug 29" },
+  { label: "Project Demo", date: "Sep 05" },
+  { label: "Assignments Due", date: "Sep 10" },
+  { label: "Sem Exams", date: "Nov 25" },
+];
+
+const subjects = [
+  {
+    code: "CS301",
+    name: "Data Structures & Algorithms",
+    resources: [
+      { type: "pdf", title: "Unit-2 Trees Notes", by: "Mentor", size: "1.2 MB" },
+      { type: "video", title: "Graphs Lecture (BFS/DFS)", by: "Mentor", length: "23:11" },
+      { type: "link", title: "LeetCode Playlist", by: "External" },
+    ],
+  },
+  {
+    code: "CS303",
+    name: "Database Systems",
+    resources: [
+      { type: "pdf", title: "ER Diagrams", by: "Mentor", size: "850 KB" },
+      { type: "video", title: "Normalization (1NF–BCNF)", by: "Mentor", length: "18:42" },
+      { type: "link", title: "SQL Joins Visual Guide", by: "External" },
+    ],
+  },
+];
+
+const assignments = [
+  { id: 101, title: "DSA – Heap Applications", subject: "DSA", due: "Aug 27, 11:59 PM", status: "Pending" },
+  { id: 102, title: "DBMS – SQL Triggers", subject: "DBMS", due: "Aug 30, 6:00 PM", status: "In Review" },
+  { id: 103, title: "OS – Process Scheduling", subject: "OS", due: "Sep 02, 11:59 PM", status: "Assigned" },
+];
+
+const tests = [
+  { id: 201, title: "DSA – Graphs Quiz", questions: 10, time: "15 min", status: "Available" },
+  { id: 202, title: "DBMS – SQL Basics", questions: 12, time: "20 min", status: "Available" },
+  { id: 203, title: "OS – Deadlocks", questions: 8, time: "10 min", status: "Closed" },
+];
+
+// --- Small UI helpers ---
+function Kbd({ children }) {
+  return (
+    <span className="rounded-md border px-1.5 py-0.5 text-xs font-mono shadow-sm">
+      {children}
+    </span>
+  );
+}
+
+function StatCard({ icon: Icon, title, value, hint }) {
+  return (
+    <Card className="rounded-2xl shadow-sm">
+      <CardContent className="p-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-sm text-muted-foreground">{title}</p>
+            <p className="mt-1 text-2xl font-semibold">{value}</p>
+            {hint ? <p className="mt-1 text-xs text-muted-foreground">{hint}</p> : null}
+          </div>
+          <div className="rounded-2xl bg-muted p-3">
+            <Icon className="h-5 w-5" />
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+function SectionTitle({ icon: Icon, title, right }) {
+  return (
+    <div className="mb-3 flex items-center justify-between">
+      <div className="flex items-center gap-2">
+        <Icon className="h-5 w-5" />
+        <h3 className="text-base font-semibold">{title}</h3>
+      </div>
+      {right}
+    </div>
+  );
+}
+
+// --- Main App ---
+export default function App() {
+  return (
+    <div className="min-h-screen w-full bg-gradient-to-b from-white to-slate-50 text-slate-900">
+      {/* Topbar */}
+      <header className="sticky top-0 z-20 border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+          <div className="flex items-center gap-3">
+            <GraduationCap className="h-6 w-6" />
+            <span className="text-lg font-semibold">Digital Classroom</span>
+            <Separator orientation="vertical" className="mx-2 h-6" />
+            <span className="hidden text-sm text-muted-foreground sm:inline">
+              Student · E3–S1 · 3rd Year CSE
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="hidden items-center gap-2 md:flex">
+              <Kbd>Ctrl</Kbd>
+              <Kbd>K</Kbd>
+              <span className="text-xs text-muted-foreground">to search</span>
+            </div>
+            <Button variant="ghost" size="icon" className="rounded-full">
+              <Bell className="h-5 w-5" />
+            </Button>
+            <Avatar className="h-8 w-8">
+              <AvatarImage alt="Student" />
+              <AvatarFallback>NY</AvatarFallback>
+            </Avatar>
+          </div>
+        </div>
+      </header>
+
+      {/* Content */}
+      <main className="mx-auto grid max-w-7xl grid-cols-1 gap-4 px-4 py-4 lg:grid-cols-12">
+        {/* Left rail – quick stats */}
+        <section className="order-1 grid grid-cols-2 gap-4 lg:order-none lg:col-span-4 lg:grid-cols-1">
+          <StatCard icon={BarChart2} title="Attendance" value={`${attendance}%`} hint="This semester" />
+          <Card className="rounded-2xl shadow-sm">
+            <CardContent className="p-4">
+              <SectionTitle icon={BookOpen} title="Grade Trend" />
+              <div className="h-36">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={gradeTrend} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                    <XAxis dataKey="name" tick={{ fontSize: 12 }} />
+                    <YAxis domain={[0, 100]} tick={{ fontSize: 12 }} />
+                    <Tooltip />
+                    <Legend />
+                    <Line type="monotone" dataKey="grade" stroke="#3b82f6" strokeWidth={2} dot={false} />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="rounded-2xl shadow-sm">
+            <CardContent className="p-4">
+              <SectionTitle icon={ClipboardList} title="Subjects – Performance" />
+              <div className="h-40">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie data={subjectBreakdown} dataKey="value" nameKey="name" innerRadius={45} outerRadius={70}>
+                      {subjectBreakdown.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      ))}
+                    </Pie>
+                    <Tooltip />
+                    <Legend />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Center – primary workspace */}
+        <section className="lg:col-span-5">
+          {/* Notices */}
+          <Card className="rounded-2xl shadow-sm">
+            <CardContent className="p-4">
+              <SectionTitle
+                icon={Bell}
+                title="Notice Board"
+                right={<Button size="sm" variant="outline">View all</Button>}
+              />
+              <div className="space-y-3">
+                {notices.map((n) => (
+                  <div key={n.id} className="flex items-center justify-between rounded-xl border p-3">
+                    <div className="flex min-w-0 items-center gap-3">
+                      <Badge variant="secondary">{n.tag}</Badge>
+                      <p className="truncate text-sm font-medium">{n.title}</p>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <CalendarDays className="h-4 w-4" />
+                      {n.when}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Assignments */}
+          <Card className="mt-4 rounded-2xl shadow-sm">
+            <CardContent className="p-4">
+              <SectionTitle
+                icon={FileText}
+                title="Assignments"
+                right={<Button size="sm">New Submission</Button>}
+              />
+              <div className="space-y-3">
+                {assignments.map((a) => (
+                  <div key={a.id} className="grid grid-cols-12 items-center gap-3 rounded-xl border p-3">
+                    <div className="col-span-6">
+                      <p className="text-sm font-semibold">{a.title}</p>
+                      <p className="text-xs text-muted-foreground">{a.subject}</p>
+                    </div>
+                    <div className="col-span-3 flex items-center gap-2 text-xs">
+                      <Clock className="h-4 w-4" />
+                      <span className="text-muted-foreground">Due {a.due}</span>
+                    </div>
+                    <div className="col-span-3 flex items-center justify-end gap-2">
+                      <Badge variant={a.status === "Pending" ? "destructive" : a.status === "In Review" ? "secondary" : "outline"}>{a.status}</Badge>
+                      <Button size="sm" variant="outline">Open</Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Tests / Quizzes */}
+          <Card className="mt-4 rounded-2xl shadow-sm">
+            <CardContent className="p-4">
+              <SectionTitle icon={NotebookPen} title="Quizzes / Tests" />
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                {tests.map((t) => (
+                  <div key={t.id} className="rounded-xl border p-3">
+                    <p className="text-sm font-semibold">{t.title}</p>
+                    <div className="mt-1 flex items-center gap-3 text-xs text-muted-foreground">
+                      <span>{t.questions} questions</span>
+                      <span>•</span>
+                      <span>{t.time}</span>
+                    </div>
+                    <div className="mt-3 flex items-center justify-between">
+                      <Badge variant={t.status === "Available" ? "default" : "outline"}>{t.status}</Badge>
+                      <Button size="sm" disabled={t.status !== "Available"}>Start</Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Right – timetable, dates, resources */}
+        <section className="lg:col-span-3">
+          {/* Timetable */}
+          <Card className="rounded-2xl shadow-sm">
+            <CardContent className="p-4">
+              <SectionTitle icon={CalendarDays} title="Timetable" />
+              <div className="grid grid-cols-1 gap-2">
+                {timetable.map((row, idx) => (
+                  <div key={idx} className="rounded-xl border p-2">
+                    <p className="text-xs font-semibold">{row.day}</p>
+                    <div className="mt-1 grid grid-cols-6 gap-1">
+                      {row.slots.map((s, i) => (
+                        <span key={i} className="truncate rounded-md bg-muted px-2 py-1 text-[10px]">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Important Dates */}
+          <Card className="mt-4 rounded-2xl shadow-sm">
+            <CardContent className="p-4">
+              <SectionTitle icon={CalendarDays} title="Important Dates" />
+              <ul className="space-y-2 text-sm">
+                {importantDates.map((d, i) => (
+                  <li key={i} className="flex items-center justify-between rounded-lg border p-2">
+                    <span className="truncate">{d.label}</span>
+                    <Badge variant="secondary">{d.date}</Badge>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+
+          {/* Resources per Subject */}
+          <Card className="mt-4 rounded-2xl shadow-sm">
+            <CardContent className="p-4">
+              <SectionTitle icon={BookOpen} title="Subject Resources" />
+              <Tabs defaultValue={subjects[0].code} className="mt-2">
+                <TabsList className="w-full overflow-auto">
+                  {subjects.map((s) => (
+                    <TabsTrigger key={s.code} value={s.code} className="text-xs">
+                      {s.name}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+                {subjects.map((s) => (
+                  <TabsContent key={s.code} value={s.code} className="mt-3">
+                    <ScrollArea className="h-56 rounded-xl border">
+                      <div className="divide-y">
+                        {s.resources.map((r, i) => (
+                          <div key={i} className="flex items-center justify-between p-3">
+                            <div className="flex min-w-0 items-center gap-3">
+                              <span className="rounded-md bg-muted p-2">
+                                {r.type === "pdf" && <FileText className="h-4 w-4" />}
+                                {r.type === "video" && <Video className="h-4 w-4" />}
+                                {r.type === "link" && <LinkIcon className="h-4 w-4" />}
+                              </span>
+                              <div className="min-w-0">
+                                <p className="truncate text-sm font-medium">{r.title}</p>
+                                <p className="text-xs text-muted-foreground">{r.by} {r.size ? `• ${r.size}` : r.length ? `• ${r.length}` : ""}</p>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Button size="sm" variant="outline">Preview</Button>
+                              <Button size="sm">Open</Button>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </TabsContent>
+                ))}
+              </Tabs>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Full-width – Study Progress */}
+        <section className="lg:col-span-12">
+          <Card className="rounded-2xl shadow-sm">
+            <CardContent className="p-4">
+              <SectionTitle icon={BarChart2} title="Study Progress Overview" right={<Input placeholder="Search subject or topic…" className="w-64" />} />
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+                {["DSA", "DBMS", "OS"].map((subj, idx) => (
+                  <div key={idx} className="rounded-xl border p-4">
+                    <div className="flex items-center justify-between">
+                      <p className="text-sm font-semibold">{subj}</p>
+                      <Badge variant="secondary">Week 6</Badge>
+                    </div>
+                    <p className="mt-1 text-xs text-muted-foreground">Completion</p>
+                    <Progress value={[70, 62, 58][idx]} className="mt-1" />
+                    <div className="mt-3 h-24">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <BarChart data={[{ name: "Lec", v: 6 }, { name: "Assg", v: 2 }, { name: "Quiz", v: 1 }]}> 
+                          <XAxis dataKey="name" tick={{ fontSize: 12 }} />
+                          <YAxis allowDecimals={false} tick={{ fontSize: 12 }} />
+                          <Tooltip />
+                          <Bar dataKey="v" fill="#10b981" radius={[6, 6, 0, 0]} />
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </div>
+                    <div className="mt-2 flex items-center justify-end gap-2">
+                      <Button size="sm" variant="outline">View</Button>
+                      <Button size="sm">Continue</Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+      </main>
+
+      <footer className="mx-auto max-w-7xl px-4 pb-8 pt-2 text-center text-xs text-muted-foreground">
+        © {new Date().getFullYear()} Digital Classroom · Built with ❤️ for learning
+      </footer>
+    </div>
+  );
+}
+

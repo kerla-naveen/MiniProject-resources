@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+    header {
+      background: #222831;
+      color: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+    header .profile {
+      font-size: 14px;
+    }
+    .container {
+      display: flex;
+    }
+    nav {
+      width: 230px;
+      background: #393e46;
+      min-height: 100vh;
+      color: #fff;
+      padding-top: 20px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      padding: 15px;
+      cursor: pointer;
+      border-bottom: 1px solid #333;
+    }
+    nav ul li:hover {
+      background: #222831;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card h2 {
+      margin-top: 0;
+    }
+    input, textarea, select, button {
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 14px;
+    }
+    button {
+      background: #222831;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      width: auto;
+      padding: 8px 15px;
+    }
+    button:hover {
+      background: #555;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    table th {
+      background: #f2f2f2;
+    }
+    footer {
+      background: #222831;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Admin Dashboard</h1>
+    <div class="profile">Welcome, System Admin</div>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <nav>
+      <ul>
+        <li>📢 Manage Notices</li>
+        <li>📅 Manage Timetable</li>
+        <li>📝 Manage Curriculum</li>
+        <li>👨‍🎓 View Students</li>
+        <li>👩‍🏫 View Teachers</li>
+      </ul>
+    </nav>
+
+    <!-- Main -->
+    <main>
+      <!-- Notice Section -->
+      <div class="card">
+        <h2>📢 Upload Notices</h2>
+        <input type="text" placeholder="Notice Title">
+        <textarea placeholder="Notice Description"></textarea>
+        <button>Upload Notice</button>
+        <h3>Existing Notices</h3>
+        <table>
+          <tr><th>Title</th><th>Date</th><th>Action</th></tr>
+          <tr><td>Holiday Notice</td><td>15 Aug</td><td><button>Delete</button></td></tr>
+          <tr><td>Exam Schedule</td><td>10 Sept</td><td><button>Delete</button></td></tr>
+        </table>
+      </div>
+
+      <!-- Timetable Section -->
+      <div class="card">
+        <h2>📅 Manage Timetable</h2>
+        <table>
+          <tr><th>Day</th><th>9-10 AM</th><th>10-11 AM</th><th>11-12 PM</th></tr>
+          <tr><td>Mon</td><td><input type="text" value="Math"></td><td><input type="text" value="DBMS"></td><td><input type="text" value="OS"></td></tr>
+          <tr><td>Tue</td><td><input type="text" value="DSA"></td><td><input type="text" value="OS"></td><td><input type="text" value="DBMS"></td></tr>
+        </table>
+        <button>Save Timetable</button>
+      </div>
+
+      <!-- Curriculum Section -->
+      <div class="card">
+        <h2>📝 Upload Curriculum</h2>
+        <input type="file">
+        <button>Upload Curriculum PDF</button>
+        <h3>Uploaded Curricula</h3>
+        <ul>
+          <li>Semester 1 Curriculum.pdf <button>Delete</button></li>
+          <li>Semester 2 Curriculum.pdf <button>Delete</button></li>
+        </ul>
+      </div>
+
+      <!-- View Students -->
+      <div class="card">
+        <h2>👨‍🎓 View Students</h2>
+        <table>
+          <tr><th>Roll No</th><th>Name</th><th>Year</th><th>Action</th></tr>
+          <tr><td>101</td><td>Alice</td><td>2nd Year</td><td><button>View Profile</button></td></tr>
+          <tr><td>102</td><td>Bob</td><td>3rd Year</td><td><button>View Profile</button></td></tr>
+        </table>
+      </div>
+
+      <!-- View Teachers -->
+      <div class="card">
+        <h2>👩‍🏫 View Teachers</h2>
+        <table>
+          <tr><th>ID</th><th>Name</th><th>Subject</th><th>Action</th></tr>
+          <tr><td>T01</td><td>Prof. Smith</td><td>DBMS</td><td><button>View Profile</button></td></tr>
+          <tr><td>T02</td><td>Prof. John</td><td>OS</td><td><button>View Profile</button></td></tr>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 My College | Admin Dashboard
+  </footer>
+</body>
+</html>
+
