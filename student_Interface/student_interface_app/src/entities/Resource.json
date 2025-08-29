@@ -1,0 +1,51 @@
+{
+  "name": "Resource",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Resource title"
+    },
+    "subject_code": {
+      "type": "string",
+      "description": "Subject code"
+    },
+    "resource_type": {
+      "type": "string",
+      "enum": [
+        "document",
+        "video",
+        "notes",
+        "slides",
+        "reference"
+      ],
+      "description": "Type of resource"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL to the resource file"
+    },
+    "video_url": {
+      "type": "string",
+      "description": "Video URL (YouTube, etc.)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Resource description"
+    },
+    "uploaded_by": {
+      "type": "string",
+      "description": "Faculty/mentor name"
+    },
+    "semester": {
+      "type": "integer",
+      "description": "Semester number"
+    }
+  },
+  "required": [
+    "title",
+    "subject_code",
+    "resource_type",
+    "uploaded_by"
+  ]
+}

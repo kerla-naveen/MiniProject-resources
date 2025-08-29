@@ -1,0 +1,45 @@
+{
+  "name": "Notice",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Notice title"
+    },
+    "content": {
+      "type": "string",
+      "description": "Notice content/description"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "academic",
+        "administrative",
+        "examination",
+        "event",
+        "urgent"
+      ],
+      "description": "Notice category"
+    },
+    "posted_by": {
+      "type": "string",
+      "description": "Name of person/department posting"
+    },
+    "is_urgent": {
+      "type": "boolean",
+      "default": false,
+      "description": "Mark as urgent notice"
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date",
+      "description": "Notice expiry date"
+    }
+  },
+  "required": [
+    "title",
+    "content",
+    "category",
+    "posted_by"
+  ]
+}

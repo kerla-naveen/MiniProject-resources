@@ -1,0 +1,56 @@
+{
+  "name": "Assignment",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Assignment title"
+    },
+    "subject_code": {
+      "type": "string",
+      "description": "Subject code"
+    },
+    "description": {
+      "type": "string",
+      "description": "Assignment description"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Due date"
+    },
+    "marks": {
+      "type": "integer",
+      "description": "Total marks"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "submitted",
+        "graded"
+      ],
+      "default": "pending",
+      "description": "Assignment status"
+    },
+    "submission_url": {
+      "type": "string",
+      "description": "URL to submission file"
+    },
+    "faculty_name": {
+      "type": "string",
+      "description": "Faculty name"
+    },
+    "semester": {
+      "type": "integer",
+      "description": "Semester number"
+    }
+  },
+  "required": [
+    "title",
+    "subject_code",
+    "description",
+    "due_date",
+    "faculty_name"
+  ]
+}

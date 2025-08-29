@@ -1,0 +1,35 @@
+{
+  "name": "Student",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string",
+      "description": "Unique student identification number"
+    },
+    "semester": {
+      "type": "integer",
+      "description": "Current semester number"
+    },
+    "branch": {
+      "type": "string",
+      "description": "Academic branch/department"
+    },
+    "year": {
+      "type": "integer",
+      "description": "Academic year"
+    },
+    "attendance_percentage": {
+      "type": "number",
+      "description": "Overall attendance percentage"
+    },
+    "grade_percentage": {
+      "type": "number",
+      "description": "Overall grade percentage"
+    }
+  },
+  "required": [
+    "student_id",
+    "semester",
+    "branch"
+  ]
+}

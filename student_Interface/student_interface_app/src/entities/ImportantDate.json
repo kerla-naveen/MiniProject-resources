@@ -1,0 +1,40 @@
+{
+  "name": "ImportantDate",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Event title"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the event"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "mid_exam",
+        "semester_exam",
+        "assignment_due",
+        "project_submission",
+        "holiday",
+        "other"
+      ],
+      "description": "Type of event"
+    },
+    "description": {
+      "type": "string",
+      "description": "Event description"
+    },
+    "semester": {
+      "type": "integer",
+      "description": "Applicable semester"
+    }
+  },
+  "required": [
+    "title",
+    "date",
+    "event_type"
+  ]
+}

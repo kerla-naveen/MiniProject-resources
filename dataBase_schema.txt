@@ -1,0 +1,76 @@
+student[icoin:student]{
+  _id string pk
+  name string
+  email string
+  password string
+  class_id object
+  createdAt date
+  updatedAt date
+}
+
+teacher[icoin:teacher]{
+   _id string pk
+   name string
+   email string
+   password string
+   course_id objects[] course
+   createdAt date
+   updatedAt date
+}
+
+class[icoin:class]{
+  _id string
+  teachers_id objects[] teachers
+  students_id objects[] students
+  course_id object[] course
+}
+
+course[icoin:course]{
+  _id string
+  teacher_id object
+  students_id objects[] students
+  resoucres_id objects[] resoucres
+  assigments_id objects[] assigments
+  tests_id objects[] tests
+}
+
+resoucres[icoin:resoucres]{
+    _id string pk
+    course_id object
+    creater_id object
+    discription text
+    created_date date
+    updatedAt date
+}
+
+assigments[icoin:assigments]{
+    _id string pk
+    course_id object
+    creater_id object
+    discription text
+    created_date date
+    deadLine_date date
+    updatedAt date
+}
+
+tests[icoin:tests]{
+    _id string pk
+    course_id object
+    creater_id object
+    discription text
+    created_date date
+    updatedAt date
+}
+
+course.teacher_id -teacher._id
+course.students_id <student._id
+course.resoucres_id<resoucres._id
+course.assigments_id<assigments._id
+course.tests_id_id<tests._id
+
+
+class.course_id <course._id
+class.teachers_id<teachers._id
+class.students_id<student._id
+
+

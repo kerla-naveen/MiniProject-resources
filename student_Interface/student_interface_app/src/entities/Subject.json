@@ -1,0 +1,40 @@
+{
+  "name": "Subject",
+  "type": "object",
+  "properties": {
+    "subject_code": {
+      "type": "string",
+      "description": "Subject code"
+    },
+    "subject_name": {
+      "type": "string",
+      "description": "Subject name"
+    },
+    "semester": {
+      "type": "integer",
+      "description": "Semester number"
+    },
+    "credits": {
+      "type": "integer",
+      "description": "Subject credits"
+    },
+    "faculty_name": {
+      "type": "string",
+      "description": "Faculty/mentor name"
+    },
+    "attendance_percentage": {
+      "type": "number",
+      "description": "Subject-wise attendance"
+    },
+    "grade": {
+      "type": "string",
+      "description": "Current grade in subject"
+    }
+  },
+  "required": [
+    "subject_code",
+    "subject_name",
+    "semester",
+    "faculty_name"
+  ]
+}

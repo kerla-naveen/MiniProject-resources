@@ -1,0 +1,71 @@
+{
+  "name": "Test",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Test/exam title"
+    },
+    "subject_code": {
+      "type": "string",
+      "description": "Subject code"
+    },
+    "test_type": {
+      "type": "string",
+      "enum": [
+        "quiz",
+        "mid_exam",
+        "semester_exam",
+        "lab_exam",
+        "viva"
+      ],
+      "description": "Type of test"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Test date"
+    },
+    "time": {
+      "type": "string",
+      "description": "Test time"
+    },
+    "duration": {
+      "type": "string",
+      "description": "Test duration"
+    },
+    "marks": {
+      "type": "integer",
+      "description": "Total marks"
+    },
+    "syllabus": {
+      "type": "string",
+      "description": "Test syllabus/topics"
+    },
+    "room_number": {
+      "type": "string",
+      "description": "Examination room"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "upcoming",
+        "completed",
+        "result_declared"
+      ],
+      "default": "upcoming",
+      "description": "Test status"
+    },
+    "semester": {
+      "type": "integer",
+      "description": "Semester number"
+    }
+  },
+  "required": [
+    "title",
+    "subject_code",
+    "test_type",
+    "date",
+    "time"
+  ]
+}
